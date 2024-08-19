@@ -1,7 +1,7 @@
 
 <template>
   <div>
-    <h1>Hello World {{ num }} </h1>
+    <h1>Hello World {{ num + 10 }} </h1>
   </div>
   <button class="btn btn-danger" type="button">AAA</button>
 
