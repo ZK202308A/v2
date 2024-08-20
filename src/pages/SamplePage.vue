@@ -2,23 +2,32 @@
 <MyNav></MyNav>
 <div class="container">
 
-    <MyTilte></MyTilte>
+  <MyTilte></MyTilte>
   
-    <MyContent></MyContent>
-
-    <hr>
-
-    <MyFooter></MyFooter>
+  <SelectEx :arr="mails"></SelectEx>
 
 </div>
 </template>
 
 <script setup>
+import InputEx from '../components/ex2/InputEx.vue';
 import MyNav from '../components/MyNav.vue';
 import MyFooter from '../components/MyFooter.vue';
 import MyTilte from '../components/MyTilte.vue';
+import Counter2 from '../components/ex1/Counter2.vue';
 import MyContent from '../components/MyContent.vue';
-import Ex1 from '../components/ex1/Ex1.vue';
+
+import SelectEx from '../components/ex2/SelectEx.vue';
+
+const message = {sender:'AAA', text:'BBBBB'}
+
+const mails = [
+    {mno:1, title:'AAAAA'},
+    {mno:2, title:'BAAAA'},
+    {mno:3, title:'CAAAA'},
+    {mno:4, title:'DAAAA'},
+    {mno:5, title:'EAAAA'},
+]
 
 </script>
 
