@@ -24,6 +24,8 @@ const handleClick = () => {
     content: todoRef.value.content
   }
   emits('addTodo', todoParam)
+
+  todoRef.value = {...initState}
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <TodoInput @addTodo="addTodo"></TodoInput>
-    <TodoList></TodoList>
+    <TodoList :todoList="todoList" @removeTodos="removeTodos"></TodoList>
   </div>
 </template>
 
@@ -16,10 +16,15 @@ const todoList = ref([])
 const addTodo = (todo) => {
   todo.tno = uuidv4()
   todoList.value = [...todoList.value, todo]
-  
+
   console.log(todoList.value)
 }
 
+const removeTodos = (tnos) => {
+
+  todoList.value = todoList.value.filter(todo => ! tnos.includes(todo.tno))
+
+}
 
 
 </script>
