@@ -35,7 +35,7 @@ import { computed, ref, toRef } from 'vue';
 const props = defineProps(['todo'])
 const emits = defineEmits(['deleteTodo','modifyTodo'])
 
-const todoObj = toRef(props.todo)
+const todoObj = ref(props.todo)
 
 const handleClickDelete = () => {
   console.log('delete', props.todo.tno)
