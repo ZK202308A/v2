@@ -3,14 +3,15 @@
 <div class="container">
 
   <MyTilte></MyTilte>
-  
-  <SelectEx :arr="mails"></SelectEx>
 
+  <CountContainer></CountContainer>
 
 </div>
 </template>
 
 <script setup>
+import CountContainer from '../components/ex3/CountContainer.vue';
+import SelectEx2 from '../components/ex2/SelectEx2.vue';
 import InputEx from '../components/ex2/InputEx.vue';
 import MyNav from '../components/MyNav.vue';
 import MyFooter from '../components/MyFooter.vue';
@@ -29,6 +30,10 @@ const mails = [
     {mno:4, title:'DAAAA'},
     {mno:5, title:'EAAAA'},
 ]
+
+const doA = () => {
+  console.log('doA')
+}
 
 </script>
 
