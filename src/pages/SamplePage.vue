@@ -4,12 +4,14 @@
 
   <MyTilte></MyTilte>
 
-  <CountContainer></CountContainer>
+  <TodoContainer></TodoContainer>
 
 </div>
 </template>
 
 <script setup>
+import TodoContainer from '../components/ex4/TodoContainer.vue';
+import CountEx from '../components/ex3/index.vue'
 import CountContainer from '../components/ex3/CountContainer.vue';
 import SelectEx2 from '../components/ex2/SelectEx2.vue';
 import InputEx from '../components/ex2/InputEx.vue';
