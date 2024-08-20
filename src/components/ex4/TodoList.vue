@@ -4,7 +4,11 @@
     <button @click="handleClickRemove">REMOVE</button>
     <ul>
       <li v-for="todo in props.todoList" :key="todo.tno">
-        <input type="checkbox" :value="todo.tno" v-model="selectList" >{{ todo.title }} -- {{ todo.content }}
+        <input type="checkbox" :value="todo.tno" v-model="selectList" >
+        <TodoItem :todo="todo" 
+          @deleteTodo="(param) => emits('removeTodos',param)" 
+          @modifyTodo="(param) => emits('modifyTodo', param)"
+          ></TodoItem>
       </li>
     </ul>
   </TodoBox>
@@ -13,9 +17,10 @@
 <script setup>
 import { ref } from 'vue';
 import TodoBox from './TodoBox.vue';
+import TodoItem from './TodoItem.vue';
 
 const props = defineProps(['todoList'])
-const emits = defineEmits(['removeTodos'])
+const emits = defineEmits(['removeTodos','modifyTodo'])
 const selectList = ref([])
 
 const handleClickRemove = ()=> {

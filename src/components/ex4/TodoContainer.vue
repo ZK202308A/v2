@@ -1,7 +1,7 @@
 <template>
   <div>
     <TodoInput @addTodo="addTodo"></TodoInput>
-    <TodoList :todoList="todoList" @removeTodos="removeTodos"></TodoList>
+    <TodoList :todoList="todoList" @removeTodos="removeTodos" @modifyTodo = "modifyTodo"></TodoList>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ const todoList = ref([])
 
 const addTodo = (todo) => {
   todo.tno = uuidv4()
+  todo.complete = false
   todoList.value = [...todoList.value, todo]
 
   console.log(todoList.value)
@@ -25,6 +26,16 @@ const removeTodos = (tnos) => {
   todoList.value = todoList.value.filter(todo => ! tnos.includes(todo.tno))
 
 }
+
+const modifyTodo = (todo) => {
+
+  let targetTodo = todoList.value.find(t => t.tno === todo.tno)
+  targetTodo = todo
+
+  console.log("modified")
+
+}
+
 
 
 </script>
